@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show Product list</h2> <a href="/Product/AddProduct" class="btn btn-info">Add Product</a>
+                           <a href="/Product/ViewCart" class="btn btn-info">View Cart</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            ID
+        </th>
+
+        <th>
+            Name
+        </th>
+
+        <th>
+            Price
+        </th>
+
+        <th>
+            Quantity
+        </th>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Qty</td>
+            <td><a href="/Product/edit/@item.id" class="btn btn-info">Update</a></td>
+            <td><a href="/Product/deleteProduct/@item.id" class="btn btn-info">Delete</a></td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "ViewCart";
+}
+
+<h2>Cart</h2>
+<a href="/Product/customerProduct" class="btn btn-info">Product List</a>
+<a href="/Product/Show" class="btn btn-info">Show Inventory</a>
+
+@if (Session["cart"] != null)
+{
+<form action="" method="post">
+    <table class="table table-bordered">
+        <tr>
+            <th>Product ID</th>
+            <th>Name</th>
+            <th>Quantity Ordered</th>
+            <th>Total Price</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.Name</td>
+                <td>@item.Qty</td>
+                <td>@((item.Price * item.Qty).ToString())</td>
+            </tr>
+        }
+    </table>
+    <a href="/Product/confirmOrder" class="btn btn-info">Confirm Order</a> 
+</form>
+}
+else
+{
+    <h2>Cart is Empty!</h2>
+}
+

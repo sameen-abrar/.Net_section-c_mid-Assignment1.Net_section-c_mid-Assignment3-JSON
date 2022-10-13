@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "AddProduct";
+}
+
+<h2>AddProduct</h2>
+<a href="/Product/Show" class="btn btn-info">Show Product List</a>
+<a href="/Product/customerProduct" class="btn btn-info">Add to cart</a>
+<a href="/Product/ViewCart" class="btn btn-info">View Cart</a>
+
+<form action="" method="post">
+    @* <input type="number" name="id" readonly />*@
+    Product Name: <input type="text" name="Name" placeholder="Enter Product name" class="form-control" />
+    Price: <input type="text" name="Price" placeholder="Enter price of product" class="form-control" />
+    Quantity: <input type="number" name="Qty" placeholder="Enter Quantity of products" min="1" class="form-control" />
+    <input type="submit" value="Add product" class="form-control" />
+
+</form>
+

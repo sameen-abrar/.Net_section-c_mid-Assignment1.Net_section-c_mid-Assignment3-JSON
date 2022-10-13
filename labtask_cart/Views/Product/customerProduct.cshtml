@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>List of Products</h2> <a href="/Product/AddProduct" class="btn btn-info">Add Product</a> 
+<a href="/Product/Show" class="btn btn-info">Show Products</a>
+<a href="/Product/ViewCart" class="btn btn-info">View Cart</a>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+
+        <th>Name</th>
+
+        <th>Price</th>
+
+        <th>Stock</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <form action="" method="post">
+        <tr>
+            <td>@item.id</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Qty</td>
+            <td>
+                <input type="hidden" name="id" value="@item.id" />
+                <input type="number" name="Qty" placeholder="Amount to order" min="1" max="@item.Qty" />
+            </td>
+            <td>
+                <input type="submit" value="Add To Cart" class="btn btn-info" />
+            </td>
+        </tr>
+        </form>
+    }
+</table>
+

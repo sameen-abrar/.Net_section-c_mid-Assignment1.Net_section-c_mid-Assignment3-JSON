@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "showOrders";
+}
+<a href="/Product/customerProduct" class="btn btn-info">Product List</a>
+<a href="/Product/Show" class="btn btn-info">Show Inventory</a>
+<a href="/Product/ViewCart" class="btn btn-info">View Cart</a>
+<h2>@TempData["oc"]</h2>
+<h3>List of orders</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Order ID</th>
+        <th>Name of Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.o_id</td>
+            <td>@i.Name</td>
+            <td>@i.Qty</td>
+            <td>@i.totalPrice</td>
+        </tr>
+    }
+</table>
+
